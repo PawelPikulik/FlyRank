@@ -3,45 +3,53 @@
 ## Sitemap Sketch (4 pages, no more)
 
 ### 1. Hero / Landing Page
-- **Purpose**: State the claim immediately so the Head of AI knows what this is about in 5 seconds.
+- **Purpose**: Name the Head of AI's exact problem in 5 seconds, not just state your skill. A diagnosis, not a claim.
 - **Content**:
-  - Headline: "I ship domain-specific AI products from API to UI."
-  - Subhead: "From raw API data to live conversational product."
+  - Headline (diagnosis): "You have a domain API. I turn it into a product people actually talk to."
+  - One-line proof teaser: "Case study: built a conversational coffee expert from a raw data API in [X days/weeks]."
   - Hero visual: Achilles answering a coffee question in real-time.
-  - One CTA button: "See the work" → scrolls to Work section.
-  - Secondary CTA: "Talk to me about your domain" → contact.
+  - Primary CTA: "See how it works" → Work/Case study page.
+  - No secondary CTA. One action, no distractions.
 
 ### 2. Work / Case Study (The Proof)
-- **Purpose**: Show the one thing that proves the claim. Not a gallery of everything.
+- **Purpose**: This is the ONLY page that proves the claim. It must show *how you think*, not just *what you built*.
 - **Content**:
-  - Case study title: "Achilles: AI Coffee Expert"
-  - What it does: Answers coffee questions, remembers preferences for future recommendations.
-  - Technical stack: Live CoffeeDB.pro API + LLM + persistent memory.
+  - Opening: Name the pattern, not the domain. "Head of AI: you have a raw domain API. Here's how to turn it into a conversational product, step by step."
+  - Architecture decisions (the proof): API integration strategy, latency handling, conversation design, memory/persistence, evaluation/iteration.
+  - Coffee is the vehicle, not the subject. Show the pattern: raw domain API → structured problem → conversational UX → shipped product.
   - Demo or screenshot of the conversation flow.
   - Key result: "From raw API to conversational product, end-to-end."
-  - CTA: "Want me to build yours?" → contact page.
+  - Mid-page or end-page CTA: "Facing a similar API-to-UI problem? Let's talk." → contact page. Not buried in nav.
 
-### 3. About (Who Built This)
-- **Purpose**: Show you're the person who can do this, not a generic bio.
-- **Content**:
-  - One paragraph: who I am, what I do, why domain-specific AI.
-  - One line: "This is the proof. Not my CV. Not LinkedIn. This repo."
-  - CTA: "Let's talk about your domain" → contact.
+### 3. About (Credibility Strip — Not a Full Page)
+- **Purpose**: Prove this wasn't a one-off. Show pattern of behavior that de-risks hiring/contracting you.
+- **Decision**: This is likely a dead end. Cut it as a standalone page. Instead, add a "Credibility Strip" at the bottom of the Work/Case study page or a sidebar on the hero.
+- **Content (3 bullets max)**:
+  - Relevant experience: shipped production systems, worked with ambiguous specs, cross-functional shipping.
+  - Notable outcome: [X] domain APIs turned into live products.
+  - Why this isn't a one-off: you can do this again for someone else's domain.
+- **No CTA here.** The CTA is on the Work page above it.
 
 ### 4. Contact / Action Page
-- **Purpose**: The single most important action: get the Head of AI to reach out.
+- **Purpose**: The single most important action. Lower friction. No form fields. One click.
 - **Content**:
-  - Headline: "Let's build your domain-specific AI product."
-  - Email / Calendly link / simple contact form.
+  - Headline in their language: "Building a domain-specific AI product? Let's talk about turning your API into something people actually use."
+  - Email / Calendly link, one click. No long form.
   - No social links, no distractions. Just one action.
 
 ---
 
-## Why These Pages Only
+## Why These Pages Only (Post Pressure-Test)
 
-- **Hero**: States the claim. No scrolling required.
-- **Work**: Proves the claim with one deep case study, not a grid of thumbnails.
-- **About**: Adds credibility without diluting the proof.
-- **Contact**: The action. Everything leads here.
+Claude's verdict: you have **4 pages** and only **1 proves anything** (the case study). The other three are framing, bio, and conversion. That's normal, but it means the case study is doing 100% of the persuasive work.
 
-No blog, no testimonials, no skills grid, no "services" page. Every page earns its place by walking the Head of AI from landing → believing → acting.
+- **Hero**: Names the Head of AI's problem (diagnosis), not your skill (claim). One-line proof teaser for instant grounding. One CTA only.
+- **Work**: The only proof. Shows architecture decisions, not just "what was built." Coffee is the vehicle, not the subject. Page-level CTA bridges to Contact.
+- **About**: CUT as a standalone page. Dead end. Compressed to a credibility strip on Work or Hero.
+- **Contact**: One click, no friction. CTA speaks to their need, not generic "get in touch."
+
+No blog, no testimonials, no skills grid, no "services" page. Every page (or strip) earns its place by walking the Head of AI from landing → believing → acting.
+
+## The ONE Thing I Will Change Before Building
+
+Rewrite the case study's opening paragraph and the hero's headline to explicitly name the Head of AI's actual problem: **translating a raw domain API into a live conversational product** — not my skill, not the coffee angle. If they can't see themselves in the first two sentences of both pages, they won't reach Contact.
