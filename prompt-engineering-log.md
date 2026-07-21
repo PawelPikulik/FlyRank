@@ -232,17 +232,30 @@ Run the **Final Prompt (Version 6)** on both Claude and ChatGPT with the same us
 
 > "Recommend a coffee with berry notes for pour-over."
 
+**ChatGPT Output (Version 6, same prompt)**:
+> **Direct Answer**: I don't have that in CoffeeDB.pro right now. I can answer from general knowledge, but I want to be transparent. For a pour-over with pronounced berry notes, an Ethiopian washed or natural-process coffee—especially from regions like Yirgacheffe or Guji—is often an excellent choice.
+> 
+> **Data Source**: No matching CoffeeDB.pro entry is available to me, so this recommendation is based on general coffee knowledge rather than the database.
+> 
+> **Details**: Berry flavors such as blueberry, raspberry, or strawberry are commonly associated with high-quality Ethiopian coffees, particularly those processed naturally. Brewing with a V60, Kalita Wave, or Chemex using water around 92–96°C and a medium grind can help highlight the coffee's fruity acidity and floral aromatics.
+> 
+> **Confidence**: Low — I cannot verify a matching CoffeeDB.pro entry, so I'm relying on established specialty coffee knowledge instead of live database data.
+> 
+> **Next Step**: Are you looking for a washed coffee with bright, clean berry notes or a natural-process coffee with sweeter, more intense berry flavors?
+
+---
+
 | Dimension | Claude | ChatGPT |
 |-----------|--------|---------|
-|| **Tone** | Direct, admits limits early, avoids filler | Polite, tries to be helpful even after admitting limits |
-|| **Accuracy / Hallucination** | Zero hallucination in V6; admits no data exists | Likely to provide general-knowledge origins after disclaimer |
-|| **Structure adherence** | Rigid 5-part format followed exactly | May follow structure but softens constraints to be helpful |
-|| **Confidence honesty** | Low confidence correctly stated with reason | Low confidence stated but may infer Medium to add value |
-|| **Follow-up relevance** | Asks for entry ID or API architecture | Likely asks generic follow-up ("What roast level do you prefer?") |
-|| **Failure points** | None in V6; earlier versions added general knowledge after disclaimer | Systemic over-helpfulness: provides training-data answers as if they were substitutes |
+| **Tone** | Direct, admits limits early, avoids filler | Direct once answering, but opened with a conversational preamble ("Understood. I'll act as Achilles...") before the first query |
+| **Accuracy / Hallucination** | Zero hallucination in V6; no general knowledge offered as substitute | No hallucination of DB entries, but provided extensive general knowledge (Ethiopian Yirgacheffe/Guji, V60, 92–96°C) after the disclaimer |
+| **Structure adherence** | Rigid 5-part format followed exactly | Rigid 5-part format followed exactly — surprisingly disciplined |
+| **Confidence honesty** | Low confidence correctly stated with reason | Low confidence correctly stated with reason — explicitly notes "general coffee knowledge rather than the database" |
+| **Follow-up relevance** | Asks for entry ID or API architecture (serves Head of AI) | Asks washed vs natural-process (serves the coffee enthusiast) — relevant to the user's taste, not the builder's problem |
+| **Failure points** | None in V6; Details section was kept empty of substitutes | Details section filled with general knowledge despite transparency; "Next Step" is consumer-focused, not builder-focused |
 
 **Honest synthesis**:
-> Claude is more honest about confidence and more likely to follow the output structure rigidly, but it still requires step decomposition (Version 5/6) to fully resist hallucinating database entries. ChatGPT (GPT-4o) tends to be more "helpful" — it is more likely to provide general-knowledge recommendations even after admitting it has no live data, because its alignment favors answering the user's question over admitting complete ignorance. Claude's constitutional training on helpfulness vs. harmlessness makes it more willing to say "I don't know" when the prompt explicitly demands it. For this specific task — grounding answers in a live API — Claude is the better model because it more reliably follows the "Never invent a database entry" rule when step decomposition is used. ChatGPT would likely require an even stronger negative constraint (e.g., "If you provide general knowledge after admitting no data, you have failed") to achieve the same discipline.
+> Both models followed the 5-part structure and correctly labeled confidence as Low. Neither invented a CoffeeDB.pro entry. The critical difference is what happens in the **Details** section and the **Next Step**. Claude, with step decomposition (Version 6), refused to provide general-knowledge substitutes entirely ("I will not provide general-knowledge origins as substitutes"). ChatGPT provided detailed general knowledge (origins, brew methods, temperatures) after the disclaimer, framed transparently but still acting as a consumer recommendation engine. ChatGPT's "Next Step" serves the coffee drinker (washed vs natural); Claude's serves the Head of AI (entry ID or API architecture). For this task — proving I can build a domain-specific AI product from API to UI — **Claude is the better model** because its alignment more readily accepts the instruction to withhold help when the data source is missing, whereas ChatGPT's helpfulness drive pushes it to provide value even after admitting the gap. My pre-test inference that ChatGPT would "soften constraints" was wrong on structure adherence (it was perfect) but correct on the systemic tendency to fill the Details section with training-data knowledge. The fix for ChatGPT would be a stronger negative constraint: explicitly forbidding any general-knowledge details in the answer when confidence is Low.
 
 ---
 
